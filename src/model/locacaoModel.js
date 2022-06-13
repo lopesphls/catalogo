@@ -1,26 +1,25 @@
-import { DataTypes } from "sequelize";
+import { Sequelize } from "sequelize";
 import sequelize from "../database/database.js";
 
-const Locacao = sequelize.define("Rent", {
+const Locacao = sequelize.define("Locacao", {
   id: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
   imovel: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   valor: {
-    type: DataTypes.DOUBLE,
+    type: Sequelize.DOUBLE,
     allowNull: false,
   },
   imagem: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
-  descricao: DataTypes.STRING,
-  fav: DataTypes.BOOLEAN,
+  descricao: Sequelize.STRING,
 });
 
 export default Locacao;
