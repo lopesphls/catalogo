@@ -1,0 +1,41 @@
+<%- include('components/header') %>
+<main id="catalogo">
+  <div class="container">
+    <div class="background">
+      <lottie-player
+        src="https://assets10.lottiefiles.com/packages/lf20_rqo8mcum.json"
+        background="transparent"
+        speed="1"
+        class="fitas"
+        loop
+        autoplay
+      ></lottie-player>
+      <lottie-player
+        src="https://assets10.lottiefiles.com/packages/lf20_rqo8mcum.json"
+        background="transparent"
+        speed="1"
+        class="fitas"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+    <% locacao.forEach(el => { %>
+    <div class="box">
+      <div class="banner-casa"><img src="<%= el.imagem %>" alt="" /></div>
+      <div class="info">
+        <h1><%= el.imovel %></h1>
+        <span class="linha"></span>
+        <div class="detalhes">
+          <div class="valor">
+            <h1>R$<%= el.valor %></h1>
+          </div>
+          <a href="/deletar/<%= el.id %> ">
+            <input type="button" value="Detalhes" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</main>
+<%- include('components/footer') %>

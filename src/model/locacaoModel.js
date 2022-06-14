@@ -16,7 +16,7 @@ const Locacao = sequelize.define("Locacao", {
     allowNull: false,
   },
   imagem: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   descricao: Sequelize.STRING,

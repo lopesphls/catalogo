@@ -14,6 +14,14 @@ export const cadastrar = async (req, res) => {
   }
 };
 
+export const cadastro = async (req, res) => {
+  try {
+    res.render("cadastrar");
+  } catch {
+    res.status(400);
+  }
+};
+
 export const listar = async (req, res) => {
   try {
     const locacao = await Locacao.findByPk(req.params.id);
@@ -26,7 +34,7 @@ export const listar = async (req, res) => {
 export const catalogo = async (req, res) => {
   try {
     const locacao = await Locacao.findAll();
-    res.render("/catalogo", { locacao });
+    res.render("catalogo", { locacao });
   } catch {
     res.send(404);
   }

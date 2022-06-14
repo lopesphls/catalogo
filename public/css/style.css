@@ -1,0 +1,210 @@
+@import url("navbar.css");
+@import url("cadastro.css");
+@import url("catalogo.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#hero {
+  background-image: url(./img/hero-bg.png);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.7;
+  z-index: -1;
+}
+#hero .hero {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+#hero h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+#hero h1:nth-child(1) {
+  animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+  animation: text_reveal_name 0.5s ease forwards;
+  animation-delay: 3s;
+}
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgb(76, 0, 255);
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  color: rgb(76, 0, 255);
+  background-color: transparent;
+  border: 2px solid rgb(76, 0, 255);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgb(76, 0, 255);
+}
+
+.lottie-index {
+  width: 65%;
+}
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_reveal {
+  100% {
+    color: black;
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: rgb(76, 0, 255);
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 820px) {
+  #hero {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .lottie-index {
+    width: 100%;
+    margin-top: -8rem;
+  }
+
+  #hero h1 {
+    width: 100%;
+    font-size: 2rem;
+    color: transparent;
+    animation: text_reveal 0.5s ease forwards;
+    animation-delay: 1s;
+  }
+
+  #hero h1:nth-child(1) {
+    animation-delay: 1s;
+    margin-top: 4rem;
+  }
+
+  #hero h1:nth-child(2) {
+    animation-delay: 2s;
+  }
+
+  #hero h1:nth-child(3) {
+    animation: text_reveal_name 0.5s ease forwards;
+    animation-delay: 3s;
+  }
+
+  #hero h1 span {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(76, 0, 255);
+    animation: text_reveal_box 1s ease;
+    animation-delay: 0.5s;
+  }
+
+  #hero h1:nth-child(1) span {
+    animation-delay: 0.5s;
+  }
+
+  #hero h1:nth-child(2) span {
+    animation-delay: 1.5s;
+  }
+
+  #hero h1:nth-child(3) span {
+    animation-delay: 2.5s;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(76, 0, 255);
+    background-color: transparent;
+    border: 2px solid rgb(76, 0, 255);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
+    border-bottom-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+  }
+
+  .btn:hover {
+    color: white;
+    background-color: rgb(76, 0, 255);
+  }
+}

@@ -1,28 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main id="cadastro">
-      <div class="box-cadastro">
-        <form action="/cadastrar" method="post">
-          <label for="">Marca: </label>
-          <input type="text" name="imovel" required />
-          <label for="">Modelo: </label>
-          <input type="number" step="0.01" name="valor" required />
-          <label for="">Ano: </label>
-          <input type="text" name="imagem" required />
-          <label for="">Descrição: </label>
-          <input type="text" name="descricao" />
-          <label for="">Valor: </label>
-          <input type="text" name="fav" />
-          <button type="submit" class="btn-submit">Enviar</button>
-        </form>
-      </div>
-    </main>
-  </body>
-</html>
+<%- include('components/header') %>
+
+<main id="cadastro">
+  <div class="background">
+    <lottie-player
+      src="https://assets10.lottiefiles.com/packages/lf20_rqo8mcum.json"
+      background="transparent"
+      speed="1"
+      class="fitas"
+      loop
+      autoplay
+    ></lottie-player>
+    <lottie-player
+      src="https://assets10.lottiefiles.com/packages/lf20_rqo8mcum.json"
+      background="transparent"
+      speed="1"
+      class="fitas"
+      loop
+      autoplay
+    ></lottie-player>
+  </div>
+  <div class="box-cadastro">
+    <form action="/cadastrar" method="post">
+      <h3>Cadastre seu imóvel aqui</h3>
+      <label for="">Nome: </label>
+      <input type="text" name="imovel" required />
+      <label for="">Valor: </label>
+      <input type="number" step="0.01" name="valor" required />
+      <label for="">Imagem: </label>
+      <input type="url" name="imagem" required />
+      <label for="">Descrição: </label>
+      <input type="text" name="descricao" />
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+  </div>
+  <lottie-player
+    src="https://assets8.lottiefiles.com/packages/lf20_i0fjpks9.json"
+    background="transparent"
+    speed="1"
+    class="lottie"
+    loop
+    autoplay
+  ></lottie-player>
+</main>
+
+<%- include('components/footer') %>
