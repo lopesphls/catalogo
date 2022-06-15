@@ -24,16 +24,42 @@ export const cadastro = async (req, res) => {
 
 export const listar = async (req, res) => {
   try {
-    const locacao = await Locacao.findByPk(req.params.id);
-    res.render("/pesquisa", { locacao });
-  } catch {
-    res.status(404);
+    const resultado = await Locacao.findAll({
+      where: {
+        imovel: {
+          [Op.like]: `%${req.body.resultado}%`,
+        },
+      },
+      order: [["id", "DESC"]],
+    });
+
+    if (resultado.length == 0) {
+      return res.redirect("/catalogo");
+    }
+
+    res.render("catalogo", {
+      casa: [],
+      message,
+      type,
+      casaSearch: casa,
+    });
+  } catch  {
+    res.status(400)
   }
 };
 
 export const catalogo = async (req, res) => {
   try {
     const locacao = await Locacao.findAll();
+    res.render("catalogo", { locacao });
+  } catch {
+    res.send(404);
+  }
+};
+
+export const detalhes = async (req, res) => {
+  try {
+    const locacao = await Locacao.findByPk(req.params.id);
     res.render("catalogo", { locacao });
   } catch {
     res.send(404);

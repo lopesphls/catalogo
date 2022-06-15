@@ -3,6 +3,7 @@
         "Locacao",
         "descricao",
         "imovel",
-        "locacao"
+        "locacao",
+        "lottie"
     ]
 }
